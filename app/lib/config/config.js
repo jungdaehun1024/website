@@ -1,13 +1,15 @@
 "use strict"
 
 const {Sequelize} = require("sequelize");
+require("dotenv").config();
+
+const {MYSQL_DBNAME,MYSQL_DIALECT,MYSQL_HOST,MYSQL_PASSWORD,MYSQL_USERNAME} =process.env;
 
 
 //sequelize 인스턴스 생성
-
-const sequelize = new Sequelize("website","root","182074",{
-    host: "localhost",
-    dialect: "mysql"
+const sequelize = new Sequelize(MYSQL_DBNAME,MYSQL_USERNAME,MYSQL_PASSWORD,{
+    host: MYSQL_HOST,
+    dialect: MYSQL_DIALECT
 });
 
 //DB 연결 테스트

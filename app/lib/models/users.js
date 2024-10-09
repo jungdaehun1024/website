@@ -18,12 +18,5 @@ const User = sequelize.define("User",{
     timestamps: false, //createAt, UpdatedAt 필드 비활성화
 });
 
-sequelize.sync()
-        .then(() => {
-            console.log('User model synchronized with the database.');
-        })
-        .catch(err => {
-            console.error('Error synchronizing the model:', err);
-        });
 
 module.exports =User;

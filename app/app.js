@@ -1,6 +1,5 @@
 const express = require("express");
 require("dotenv").config();
-
 const app = express();
 require("./lib/router/mainRouter")(app);
 require("./lib/router/siginupRouter")(app);
